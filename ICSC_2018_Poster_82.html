@@ -63,24 +63,18 @@ Using empirical considerations for our corpus <span class="math inline">\(p_{min
 </section></section>
 <section><section id="section-3" class="titleslide slide level1 col-3"><h1></h1></section><section id="results" class="slide level2">
 <h2>Results</h2>
-<p>The dataset consists of 20491 html pages:<br />
-<strong>Nucleus</strong>: 8902 pages<br />
-<strong>Alphabay</strong>: 7472 pages<br />
-<strong>Crypto Market</strong>: 2435 pages<br />
-<strong>East India</strong>: 1682 pages<br />
-Using the adjusted vocabulary we runned the final STM with covariate using 4 different tests (exclusivity, semantic coherence, heldout, and residual) in order to choose the number of topics <span class="math inline">\(K\)</span> on the set <span class="math inline">\(\mathcal{K} = \{\)</span> <span class="math inline">\(40\)</span>, <span class="math inline">\(44\)</span>, <span class="math inline">\(48\)</span>, <span class="math inline">\(52\)</span>, <span class="math inline">\(56\)</span>, <span class="math inline">\(58\)</span>, <span class="math inline">\(59\)</span>, <span class="math inline">\(60\)</span>, <span class="math inline">\(61\)</span>, <span class="math inline">\(62\)</span>, <span class="math inline">\(63\)</span>, <span class="math inline">\(64\)</span>, <span class="math inline">\(65\)</span>, <span class="math inline">\(66\)</span>, <span class="math inline">\(68\)</span>, <span class="math inline">\(69\)</span>, <span class="math inline">\(70\)</span>, <span class="math inline">\(71\)</span> <span class="math inline">\(\}\)</span> to explore larger than 39 (categories):<br />
-1. to produce a refined characterization of the dataset and 2. to extract cross-category topics.<br />
+<p>The dataset consists of 20491 html pages divided by category: <strong>Nucleus</strong>(8902), <strong>Alphabay</strong>(7472), <strong>Crypto Market</strong> (2435) and <strong>East India</strong> (1682).<br />
+We runned the final STM with covariate using 4 different tests (exclusivity, semantic coherence, heldout, and residual) in order to choose the number of topics <span class="math inline">\(K\)</span> on the set <span class="math inline">\(\mathcal{K} = \{\)</span> <span class="math inline">\(40\)</span>, <span class="math inline">\(44\)</span>, <span class="math inline">\(48\)</span>, <span class="math inline">\(52\)</span>, <span class="math inline">\(56\)</span>, <span class="math inline">\(58\)</span>, <span class="math inline">\(59\)</span>, <span class="math inline">\(60\)</span>, <span class="math inline">\(61\)</span>, <span class="math inline">\(62\)</span>, <span class="math inline">\(63\)</span>, <span class="math inline">\(64\)</span>, <span class="math inline">\(65\)</span>, <span class="math inline">\(66\)</span>, <span class="math inline">\(68\)</span>, <span class="math inline">\(69\)</span>, <span class="math inline">\(70\)</span>, <span class="math inline">\(71\)</span> <span class="math inline">\(\}\)</span>. We choosed <span class="math inline">\(\mathcal{K}\)</span> to produce a refined characterization of the dataset and to extract cross-category topics.<br />
 We setted K = 65 as a reasonable trade-off among the four metrics.</p>
 </section><section id="topic-30-methamphetamine" class="slide level2">
 <h2>Topic 30: Methamphetamine</h2>
 <p>The highest score tokens were:<br />
-ice, meth, <strong>crystal_meth</strong>, shards, <strong>crystal_methamphetamine</strong>, <strong>0.5g_crystal_methamphetamine</strong></p>
-<p>Methamphetamine was tagged only in Crypto Market with frequency of 0.022 but using STM:<br />
-in Nucleus (0.0218) the topic is 2 times more prevalent respect the others (0.0114).</p>
+ice, meth, <strong>crystal_meth</strong>, shards, <strong>crystal_methamphetamine</strong>, <strong>0.5g_crystal_methamphetamine</strong><br />
+Using STM we found that in Nucleus (0.0218) the topic is 2 times more prevalent respect the others (0.0114).</p>
 <p>Comparing our results with those from TopMine (<a href="https://goo.gl/zkuDAi" class="uri">https://goo.gl/zkuDAi</a>) we verified that, for the most representative document of the topic, TopMine is able to find the same N-grams except <strong>0.5g_crystal_methamphetamine</strong></p>
 </section><section id="cannabis-and-hashish-topics" class="slide level2">
 <h2>Cannabis and Hashish topics</h2>
-<p>We found <span class="math inline">\(7\)</span> different topics: <span class="math inline">\(1, 14, 22, 46, 50, 54, 56\)</span> <br><br />
+<p>We found <span class="math inline">\(7\)</span> different topics: <span class="math inline">\(1, 14, 22, 46, 50, 54, 56\)</span>.<br />
 Zooming to the <span class="math inline">\(56\)</span> highest score tokens were:<br />
 <strong>shatter_pull_snap</strong>, <strong>sour_strawberry_diesel</strong>,<br />
 <strong>og_kush</strong>, <strong>ak_strain</strong>, indoor, scout, hybrid,<br />
