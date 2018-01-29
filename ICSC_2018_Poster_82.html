@@ -3,93 +3,95 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Multi-Word Structural Topic Modelling of or Drug Marketplaces</title>
+  <title>Multi-Word Structural Topic Modelling of ToR Drug Marketplaces</title>
     <style type="text/css">code{white-space: pre;}</style>
-    <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    </style>
-    <link rel="stylesheet" href="poster.css"/>
+    <link rel="stylesheet" href="src/poster.css"/>
   <!--[if lt IE 9]>
   <script src="ICSC_2018_Poster_82_files/reveal.js-3.3.0.1/lib/js/html5shiv.js"></script>
   <![endif]-->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
 
 <section>
-    <h1 class="title">Multi-Word Structural Topic Modelling of or Drug Marketplaces</h1>
-    <h2 class="author"><span class="presenter">Mario Santoro <sup>1</sup></span>, and Stefano Guarino <sup>1</sup><br><font size='-2'><a href="mailto:m.santoro@iac.cnr.it">m.santoro@iac.cnr.it</a> <a href="mailto:s.guarino@iac.cnr.it">s.guarino@iac.cnr.it</a></font>
+    <h1 class="title">Multi-Word Structural Topic Modelling of ToR Drug Marketplaces</h1>
+    <h2 class="author"></span>Stefano Guarino and<sup>1</sup><span class="presenter"> Mario Santoro <sup>1,2</sup><br><font size='-1'><a href="mailto:s.guarino@iac.cnr.it">s.guarino@iac.cnr.it</a>, <a href="mailto:m.santoro@iac.cnr.it">m.santoro@iac.cnr.it</a>, <a href="http://github.com/santoroma" class="uri">http://github.com/santoroma</a></font>
 <ol class="affiliations">
 <li>
 Istituto per le Applicazioni del Calcolo “Mauro Picone” - Consiglio Nazionale delle Ricerche - Italy
 </li>
+<li>
+Dipartimento di Scienze Statistiche - Sapienza Università di Roma
+</li>
 </ol></h2>
 </section>
 
-<section><section id="section" class="titleslide slide level1 col-1"><h1></h1></section><section id="r-markdown" class="slide level2">
-<h2>R Markdown</h2>
-<p>This is an R Markdown poster based on ‘reveal.js’ presentations. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. Customize the poster.css file (or whatever it is renamed) to define the style and layout of the poster. See <a href="https://github.com/bbucior/drposter/blob/master/inst/example/poster.Rmd" class="uri">https://github.com/bbucior/drposter/blob/master/inst/example/poster.Rmd</a> for an example.</p>
-</section><section id="slide-with-bullets" class="slide level2">
-<h2>Slide with Bullets</h2>
-<ul>
-<li>Bullet 1</li>
-<li>Bullet 2</li>
-<li>Bullet 3</li>
-</ul>
+<section><section id="section" class="titleslide slide level1 col-1"><h1></h1></section><section id="scope-and-background" class="slide level2">
+<h2>Scope and Background</h2>
+<p>Within the scope of the IANCIS (Indexing of Anonimous Networks for Crime Information Search) ISEC Project , we performed a complete crawling of four famous ToR drug marketplaces: Alphabay, Crypto Market, East India and Nucleus. Since these marketplaces are grouped by category, extracting all text from this dataset yields a corpus of documents for which <em>covariate</em> information (the market and the category) are available.<br />
+Some of the IANCIS goals was: <strong>1.</strong> to understand if there is any difference between markets/categories and, <strong>2.</strong> to verify the presence of context-specific idioms and a topical slang. Topic Model (TM) can be a natural choice in order to analyze the corpus</p>
+<p>We focus on a recent extension to TM called <em>Structural Topic Modelling</em> (STM), which allows incorporating tags, categories, metadata and other instrumental information accompanying the text archive. STM uses this <em>covariate</em> information to parametrize the prior distributions in such a way to potentially affect both topical prevalence and topical content. Like many other TM, STM use the Bag Of Word approach. However, BOW suffer from two limitations: the inability to detect topical multi-word expressions (<em>i.e.</em>, <em>phrasemes</em>) and difficulty in visualizing/interpreting the obtained topics. So, regarding the IANCIS goals we need to extend STM to <em>n-grams</em> tokens.</p>
 </section></section>
-<section><section id="section-1" class="titleslide slide level1 col-2"><h1></h1></section><section id="slide-with-r-code-and-output" class="slide level2">
-<h2>Slide with R Code and Output</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(cars)</code></pre></div>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
-</section><section id="slide-with-plot" class="slide level2">
-<h2>Slide with Plot</h2>
-<p><img src="ICSC_2018_Poster_82_files/figure-revealjs/unnamed-chunk-2-1.png" width="768" /></p>
+<section><section id="section-1" class="titleslide slide level1 col-1"><h1></h1></section><section id="our-extended-stm-from-bag-of-words-to-bag-of-n-grams" class="slide level2">
+<h2>Our Extended STM: From Bag Of Words to <strong>Bag Of N-grams</strong></h2>
+<p><strong>The rationale</strong>: adding an idiom to the dictionary helps topics extraction and characterization only as long as the idiom and its components express different concepts that are relevant to different topics.</p>
+<p><strong>In practice</strong>: standard STM without covariates modeling is iteratively used to detect topic-relevant token-pairs which are merged into a <strong>single extended_word</strong>, up to a moment when no more relevant compound terms emerge.</p>
 </section></section>
-<section><section id="section-2" class="titleslide slide level1 col-1"><h1></h1></section><section id="conclusions" class="slide level2">
+<section><section id="section-2" class="titleslide slide level1 col-3"><h1></h1></section><section id="the-algorithm" class="slide level2">
+<h2>The Algorithm</h2>
+<p><img src="img/Algorithm_ICSC_00_Overall_scaled.png" /></p>
+</section><section id="how-to-read-it" class="slide level2">
+<h2>How to read it</h2>
+<p>Let <span class="math inline">\(D=\{d_1,\ldots,d_m\}\)</span> be our corpus.<br />
+After preprocessing each document is formatted as an ordered list <span class="math inline">\(d_j = (w_j^1,\ldots,w_j^{n_j})\)</span>.<br />
+Given two consecutive tokens <span class="math inline">\(w_1\)</span> and <span class="math inline">\(w_2\)</span>, <span class="math inline">\(w_1\_w_2\)</span> denotes their concatenation (<span class="math inline">\(w_1\)</span> and/or <span class="math inline">\(w_2\)</span> may be the concatenation of any number of words).<br />
+The dictionary <span class="math inline">\(W\)</span> is the union of the tokens and their concatenation. <span class="math inline">\(f(d_j,w)\)</span> denotes the tf-idf of (compound) word <span class="math inline">\(w\)</span> in document <span class="math inline">\(d_j\)</span>. <br><br />
+Let <span class="math inline">\(|W|\)</span> be the total number of tokens and <span class="math inline">\(|D|\)</span> the number of documents.<br />
+<span class="math inline">\(F\)</span> is the <span class="math inline">\(|W| × K\)</span> matrix whose entry <span class="math inline">\(F_{l,t}\)</span> is the FREX score of token <span class="math inline">\(w_l\)</span> with respect to topic <span class="math inline">\(t\)</span>.<br />
+<span class="math inline">\(P\)</span> is the <span class="math inline">\(K × |D|\)</span> matrix whose entry <span class="math inline">\(P_{t,j}\)</span> is the probability of topic <span class="math inline">\(t\)</span> appearing in document <span class="math inline">\(d_j\)</span>.<br />
+<br><br />
+The product <span class="math inline">\(S = F·P\)</span> yields a <span class="math inline">\(|W| × |D|\)</span> matrix whose entry <span class="math inline">\(S_{l,j}\)</span> is a score of the relevance of word <span class="math inline">\(w_l\)</span> in document <span class="math inline">\(d_j\)</span>.</p>
+</section><section id="explained" class="slide level2">
+<h2>Explained</h2>
+<p>In words, the algorithm iteratively <em>extends</em> the corpus dictionary by adding all tokens <span class="math inline">\(w_j^i\_w_j^{i+1}\)</span> obtained concatenating any two consecutive words/tokens in a document. <br><br />
+For each document <span class="math inline">\(d_j\)</span> only compound tokens whose score <span class="math inline">\(S_{l,j}\)</span> is above a pre-determined thresholds <span class="math inline">\(s_{min}\)</span> are kept, and every occurrence of the corresponding pair in <span class="math inline">\(d_j\)</span> is replaced by the unique extended token.<br />
+<br><br />
+The algorithm stops when at least a fraction <span class="math inline">\(\epsilon\)</span> of new relevant tokens are found in total.<br />
+Using empirical considerations for our corpus <span class="math inline">\(p_{min} = 0.01\)</span>, <span class="math inline">\(FREX_{min} = 0.95\)</span> and then <span class="math inline">\(s_{min} = p_{min} \cdot FREX_{min} = 9.5 \cdot 10^{-3}\)</span></p>
+</section></section>
+<section><section id="section-3" class="titleslide slide level1 col-3"><h1></h1></section><section id="results" class="slide level2">
+<h2>Results</h2>
+<p>The dataset consists of 20491 html pages:<br />
+<strong>Nucleus</strong>: 8902 pages<br />
+<strong>Alphabay</strong>: 7472 pages<br />
+<strong>Crypto Market</strong>: 2435 pages<br />
+<strong>East India</strong>: 1682 pages<br />
+Using the adjusted vocabulary we runned the final STM with covariate using 4 different tests (exclusivity, semantic coherence, heldout, and residual) in order to choose the number of topics <span class="math inline">\(K\)</span> on the set <span class="math inline">\(\mathcal{K} = \{\)</span> <span class="math inline">\(40\)</span>, <span class="math inline">\(44\)</span>, <span class="math inline">\(48\)</span>, <span class="math inline">\(52\)</span>, <span class="math inline">\(56\)</span>, <span class="math inline">\(58\)</span>, <span class="math inline">\(59\)</span>, <span class="math inline">\(60\)</span>, <span class="math inline">\(61\)</span>, <span class="math inline">\(62\)</span>, <span class="math inline">\(63\)</span>, <span class="math inline">\(64\)</span>, <span class="math inline">\(65\)</span>, <span class="math inline">\(66\)</span>, <span class="math inline">\(68\)</span>, <span class="math inline">\(69\)</span>, <span class="math inline">\(70\)</span>, <span class="math inline">\(71\)</span> <span class="math inline">\(\}\)</span> to explore larger than 39 (categories):<br />
+1. to produce a refined characterization of the dataset and 2. to extract cross-category topics.<br />
+We setted K = 65 as a reasonable trade-off among the four metrics.</p>
+</section><section id="topic-30-methamphetamine" class="slide level2">
+<h2>Topic 30: Methamphetamine</h2>
+<p>The highest score tokens were:<br />
+ice, meth, <strong>crystal_meth</strong>, shards, <strong>crystal_methamphetamine</strong>, <strong>0.5g_crystal_methamphetamine</strong></p>
+<p>Methamphetamine was tagged only in Crypto Market with frequency of 0.022 but using STM:<br />
+in Nucleus (0.0218) the topic is 2 times more prevalent respect the others (0.0114).</p>
+<p>Comparing our results with those from TopMine (<a href="https://goo.gl/zkuDAi" class="uri">https://goo.gl/zkuDAi</a>) we verified that, for the most representative document of the topic, TopMine is able to find the same N-grams except <strong>0.5g_crystal_methamphetamine</strong></p>
+</section><section id="cannabis-and-hashish-topics" class="slide level2">
+<h2>Cannabis and Hashish topics</h2>
+<p>We found <span class="math inline">\(7\)</span> different topics: <span class="math inline">\(1, 14, 22, 46, 50, 54, 56\)</span> <br><br />
+Zooming to the <span class="math inline">\(56\)</span> highest score tokens were:<br />
+<strong>shatter_pull_snap</strong>, <strong>sour_strawberry_diesel</strong>,<br />
+<strong>og_kush</strong>, <strong>ak_strain</strong>, indoor, scout, hybrid,<br />
+indica, sativa, <strong>chemicalscannabis_hashishbuds</strong>, <strong>content_thc_cbd</strong>, <strong>14g_black_diamond</strong>.</p>
+<p>In East India the topic <span class="math inline">\(56\)</span> show a <span class="math inline">\(30\%\)</span> increase respect to the others. <br><br />
+Like the topic <span class="math inline">\(30\)</span>, for topic <span class="math inline">\(56\)</span>, we verified that TopMine is able to find the same N-grams except <strong>14g_black_diamond</strong>, <strong>shatter_pull_snap</strong>, <strong>ak_strain</strong>.</p>
+</section></section>
+<section><section id="section-4" class="titleslide slide level1 col-1"><h1></h1></section><section id="conclusions" class="slide level2">
 <h2>Conclusions</h2>
-<p>Take a look around the project example for a tour of useful column classes, etc.</p>
+<p>As an exploratory approach we opted for an ad-hoc heuristic based on iteratively apply standard STM to detect topic-relevant term-pairs and merge them into a single extended-word.<br />
+The coherence and the intelligibility of the obtained topics were significantly enhanced. Through a fine-grained and cross-market analysis of the thematic organization of the corpus we were able to gain relevant information about drug trade on ToR that goes well beyond those provided by the already available high level content classification.</p>
 </section></section>
     </div>
   </div>
