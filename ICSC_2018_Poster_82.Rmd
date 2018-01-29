@@ -18,11 +18,11 @@ Some of the IANCIS goals was:
 **2.** to verify the presence of context-specific idioms and a topical slang. 
 Topic Model (TM) can be a natural choice in order to analyze the corpus  
   
-We focus on a recent extension to TM called *Structural Topic Modelling* (STM), which allows incorporating tags, categories, metadata and other instrumental information accompanying the text archive.
+We focused on a recent extension to TM called *Structural Topic Modelling* (STM), which allows incorporating tags, categories, metadata and other instrumental information accompanying the text archive.
 STM uses this *covariate* information to parametrize the prior distributions in such a way to potentially affect both topical prevalence and topical content.
 Like many other TM, STM use the Bag Of Word approach. 
 However, BOW suffer from two limitations:  the inability to detect topical multi-word expressions (*i.e.*, *phrasemes*) and difficulty in visualizing/interpreting the obtained topics. 
-So, regarding the IANCIS goals we need to extend STM to *n-grams* tokens.
+So, regarding the IANCIS goals, we need to extend STM to *n-grams* tokens.
   
 # {.col-1 }
 
@@ -67,35 +67,45 @@ For each document $d_j$ only compound tokens whose score $S_{l,j}$ is above a pr
 The algorithm stops when at least a fraction $\epsilon$ of new relevant tokens are found in total.  
 Using empirical considerations for our corpus $p_{min} = 0.01$, $FREX_{min} = 0.95$  and then $s_{min} = p_{min} \cdot FREX_{min} = 9.5 \cdot 10^{-3}$ 
 
-# {.col-3} 
+# {.col-1} 
 
 ## Results  
 
-The dataset consists of 20491 html pages divided by category: **Nucleus**(8902), **Alphabay**(7472), **Crypto Market** (2435) and **East India** (1682).    
-We runned the final STM with covariate using 4 different tests (exclusivity, semantic coherence, heldout, and residual) in order to choose the number of topics $K$ on the set $\mathcal{K} = \{$ $40$, $44$, $48$, $52$, $56$, $58$, $59$, $60$, $61$, $62$, $63$, $64$, $65$, $66$, $68$, $69$, $70$, $71$ $\}$.
+
+# {.col-3} 
+  
+## Topics' Number 
+<small>
+The dataset consists of 20491 html pages divided by category: **Nucleus**(8902), **Alphabay**(7472), **Crypto Market** (2435) and **East India** (1682).  
+We runned the final STM with covariate using 4 different tests (exclusivity, semantic coherence, heldout, and residual) in order to choose the number of topics $K$ on the set $\mathcal{K} = \{$<small> $40$, $44$, $48$, $52$, $56$, $58$, $59$, $60$, $61$, $62$, $63$, $64$, $65$, $66$, $68$, $69$, $70$, $71$</small> $\}$.  
 We choosed $\mathcal{K}$ to produce a refined characterization of the dataset and to extract cross-category topics.  
 We setted K = 65 as a reasonable trade-off among the four metrics.
-
+</small>
 
 ## Topic 30: Methamphetamine
 
+<small>
 The highest score tokens were:  
-ice, meth, **crystal_meth**, shards, **crystal_methamphetamine**, **0.5g_crystal_methamphetamine**  
+ice, meth, **crystal_meth**, shards,  
+**crystal_methamphetamine**,  
+**0.5g_crystal_methamphetamine**.  
 Using STM we found that in Nucleus (0.0218) the topic is 2 times more prevalent respect the others (0.0114).  
-
 Comparing our results with those from TopMine (https://goo.gl/zkuDAi) we verified that, for the  most representative document of the topic, TopMine is able to find the same N-grams except **0.5g_crystal_methamphetamine**
+</small>
+
 
 ## Cannabis and Hashish topics  
 
+<small>
 We found $7$ different topics: $1, 14, 22, 46, 50, 54, 56$.  
 Zooming to the $56$ highest score tokens were:  
-**shatter_pull_snap**, **sour_strawberry_diesel**,       
-**og_kush**, **ak_strain**, indoor, scout, hybrid,   
-indica, sativa, **chemicalscannabis_hashishbuds**,   **content_thc_cbd**, **14g_black_diamond**. 
-
-In East India the topic $56$ show a $30\%$ increase respect to the others. 
-<br>  
+**shatter_pull_snap**, **sour_strawberry_diesel**,  
+**og_kush**, **ak_strain**, indoor, scout, hybrid,  
+indica, sativa, **chemicalscannabis_hashishbuds**,  
+**content_thc_cbd**, **14g_black_diamond**.  
+In East India the topic $56$ show a $30\%$ increase respect to the others.  
 Like the topic $30$, for topic $56$, we verified that TopMine is able to find the same N-grams except **14g_black_diamond**, **shatter_pull_snap**, **ak_strain**.
+</small>   
     
 # {.col-1}
 

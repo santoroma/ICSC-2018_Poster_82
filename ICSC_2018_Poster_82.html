@@ -32,7 +32,7 @@ Dipartimento di Scienze Statistiche - Sapienza Università di Roma
 <h2>Scope and Background</h2>
 <p>Within the scope of the IANCIS (Indexing of Anonimous Networks for Crime Information Search) ISEC Project , we performed a complete crawling of four famous ToR drug marketplaces: Alphabay, Crypto Market, East India and Nucleus. Since these marketplaces are grouped by category, extracting all text from this dataset yields a corpus of documents for which <em>covariate</em> information (the market and the category) are available.<br />
 Some of the IANCIS goals was: <strong>1.</strong> to understand if there is any difference between markets/categories and, <strong>2.</strong> to verify the presence of context-specific idioms and a topical slang. Topic Model (TM) can be a natural choice in order to analyze the corpus</p>
-<p>We focus on a recent extension to TM called <em>Structural Topic Modelling</em> (STM), which allows incorporating tags, categories, metadata and other instrumental information accompanying the text archive. STM uses this <em>covariate</em> information to parametrize the prior distributions in such a way to potentially affect both topical prevalence and topical content. Like many other TM, STM use the Bag Of Word approach. However, BOW suffer from two limitations: the inability to detect topical multi-word expressions (<em>i.e.</em>, <em>phrasemes</em>) and difficulty in visualizing/interpreting the obtained topics. So, regarding the IANCIS goals we need to extend STM to <em>n-grams</em> tokens.</p>
+<p>We focused on a recent extension to TM called <em>Structural Topic Modelling</em> (STM), which allows incorporating tags, categories, metadata and other instrumental information accompanying the text archive. STM uses this <em>covariate</em> information to parametrize the prior distributions in such a way to potentially affect both topical prevalence and topical content. Like many other TM, STM use the Bag Of Word approach. However, BOW suffer from two limitations: the inability to detect topical multi-word expressions (<em>i.e.</em>, <em>phrasemes</em>) and difficulty in visualizing/interpreting the obtained topics. So, regarding the IANCIS goals, we need to extend STM to <em>n-grams</em> tokens.</p>
 </section></section>
 <section><section id="section-1" class="titleslide slide level1 col-1"><h1></h1></section><section id="our-extended-stm-from-bag-of-words-to-bag-of-n-grams" class="slide level2">
 <h2>Our Extended STM: From Bag Of Words to <strong>Bag Of N-grams</strong></h2>
@@ -61,28 +61,35 @@ For each document <span class="math inline">\(d_j\)</span> only compound tokens 
 The algorithm stops when at least a fraction <span class="math inline">\(\epsilon\)</span> of new relevant tokens are found in total.<br />
 Using empirical considerations for our corpus <span class="math inline">\(p_{min} = 0.01\)</span>, <span class="math inline">\(FREX_{min} = 0.95\)</span> and then <span class="math inline">\(s_{min} = p_{min} \cdot FREX_{min} = 9.5 \cdot 10^{-3}\)</span></p>
 </section></section>
-<section><section id="section-3" class="titleslide slide level1 col-3"><h1></h1></section><section id="results" class="slide level2">
+<section><section id="section-3" class="titleslide slide level1 col-1"><h1></h1></section><section id="results" class="slide level2">
 <h2>Results</h2>
-<p>The dataset consists of 20491 html pages divided by category: <strong>Nucleus</strong>(8902), <strong>Alphabay</strong>(7472), <strong>Crypto Market</strong> (2435) and <strong>East India</strong> (1682).<br />
-We runned the final STM with covariate using 4 different tests (exclusivity, semantic coherence, heldout, and residual) in order to choose the number of topics <span class="math inline">\(K\)</span> on the set <span class="math inline">\(\mathcal{K} = \{\)</span> <span class="math inline">\(40\)</span>, <span class="math inline">\(44\)</span>, <span class="math inline">\(48\)</span>, <span class="math inline">\(52\)</span>, <span class="math inline">\(56\)</span>, <span class="math inline">\(58\)</span>, <span class="math inline">\(59\)</span>, <span class="math inline">\(60\)</span>, <span class="math inline">\(61\)</span>, <span class="math inline">\(62\)</span>, <span class="math inline">\(63\)</span>, <span class="math inline">\(64\)</span>, <span class="math inline">\(65\)</span>, <span class="math inline">\(66\)</span>, <span class="math inline">\(68\)</span>, <span class="math inline">\(69\)</span>, <span class="math inline">\(70\)</span>, <span class="math inline">\(71\)</span> <span class="math inline">\(\}\)</span>. We choosed <span class="math inline">\(\mathcal{K}\)</span> to produce a refined characterization of the dataset and to extract cross-category topics.<br />
-We setted K = 65 as a reasonable trade-off among the four metrics.</p>
+</section></section>
+<section><section id="section-4" class="titleslide slide level1 col-3"><h1></h1></section><section id="topics-number" class="slide level2">
+<h2>Topics’ Number</h2>
+<p><small> The dataset consists of 20491 html pages divided by category: <strong>Nucleus</strong>(8902), <strong>Alphabay</strong>(7472), <strong>Crypto Market</strong> (2435) and <strong>East India</strong> (1682).<br />
+We runned the final STM with covariate using 4 different tests (exclusivity, semantic coherence, heldout, and residual) in order to choose the number of topics <span class="math inline">\(K\)</span> on the set <span class="math inline">\(\mathcal{K} = \{\)</span><small> <span class="math inline">\(40\)</span>, <span class="math inline">\(44\)</span>, <span class="math inline">\(48\)</span>, <span class="math inline">\(52\)</span>, <span class="math inline">\(56\)</span>, <span class="math inline">\(58\)</span>, <span class="math inline">\(59\)</span>, <span class="math inline">\(60\)</span>, <span class="math inline">\(61\)</span>, <span class="math inline">\(62\)</span>, <span class="math inline">\(63\)</span>, <span class="math inline">\(64\)</span>, <span class="math inline">\(65\)</span>, <span class="math inline">\(66\)</span>, <span class="math inline">\(68\)</span>, <span class="math inline">\(69\)</span>, <span class="math inline">\(70\)</span>, <span class="math inline">\(71\)</span></small> <span class="math inline">\(\}\)</span>.<br />
+We choosed <span class="math inline">\(\mathcal{K}\)</span> to produce a refined characterization of the dataset and to extract cross-category topics.<br />
+We setted K = 65 as a reasonable trade-off among the four metrics. </small></p>
 </section><section id="topic-30-methamphetamine" class="slide level2">
 <h2>Topic 30: Methamphetamine</h2>
-<p>The highest score tokens were:<br />
-ice, meth, <strong>crystal_meth</strong>, shards, <strong>crystal_methamphetamine</strong>, <strong>0.5g_crystal_methamphetamine</strong><br />
-Using STM we found that in Nucleus (0.0218) the topic is 2 times more prevalent respect the others (0.0114).</p>
-<p>Comparing our results with those from TopMine (<a href="https://goo.gl/zkuDAi" class="uri">https://goo.gl/zkuDAi</a>) we verified that, for the most representative document of the topic, TopMine is able to find the same N-grams except <strong>0.5g_crystal_methamphetamine</strong></p>
+<p><small> The highest score tokens were:<br />
+ice, meth, <strong>crystal_meth</strong>, shards,<br />
+<strong>crystal_methamphetamine</strong>,<br />
+<strong>0.5g_crystal_methamphetamine</strong>.<br />
+Using STM we found that in Nucleus (0.0218) the topic is 2 times more prevalent respect the others (0.0114).<br />
+Comparing our results with those from TopMine (<a href="https://goo.gl/zkuDAi" class="uri">https://goo.gl/zkuDAi</a>) we verified that, for the most representative document of the topic, TopMine is able to find the same N-grams except <strong>0.5g_crystal_methamphetamine</strong> </small></p>
 </section><section id="cannabis-and-hashish-topics" class="slide level2">
 <h2>Cannabis and Hashish topics</h2>
-<p>We found <span class="math inline">\(7\)</span> different topics: <span class="math inline">\(1, 14, 22, 46, 50, 54, 56\)</span>.<br />
+<p><small> We found <span class="math inline">\(7\)</span> different topics: <span class="math inline">\(1, 14, 22, 46, 50, 54, 56\)</span>.<br />
 Zooming to the <span class="math inline">\(56\)</span> highest score tokens were:<br />
 <strong>shatter_pull_snap</strong>, <strong>sour_strawberry_diesel</strong>,<br />
 <strong>og_kush</strong>, <strong>ak_strain</strong>, indoor, scout, hybrid,<br />
-indica, sativa, <strong>chemicalscannabis_hashishbuds</strong>, <strong>content_thc_cbd</strong>, <strong>14g_black_diamond</strong>.</p>
-<p>In East India the topic <span class="math inline">\(56\)</span> show a <span class="math inline">\(30\%\)</span> increase respect to the others. <br><br />
-Like the topic <span class="math inline">\(30\)</span>, for topic <span class="math inline">\(56\)</span>, we verified that TopMine is able to find the same N-grams except <strong>14g_black_diamond</strong>, <strong>shatter_pull_snap</strong>, <strong>ak_strain</strong>.</p>
+indica, sativa, <strong>chemicalscannabis_hashishbuds</strong>,<br />
+<strong>content_thc_cbd</strong>, <strong>14g_black_diamond</strong>.<br />
+In East India the topic <span class="math inline">\(56\)</span> show a <span class="math inline">\(30\%\)</span> increase respect to the others.<br />
+Like the topic <span class="math inline">\(30\)</span>, for topic <span class="math inline">\(56\)</span>, we verified that TopMine is able to find the same N-grams except <strong>14g_black_diamond</strong>, <strong>shatter_pull_snap</strong>, <strong>ak_strain</strong>. </small></p>
 </section></section>
-<section><section id="section-4" class="titleslide slide level1 col-1"><h1></h1></section><section id="conclusions" class="slide level2">
+<section><section id="section-5" class="titleslide slide level1 col-1"><h1></h1></section><section id="conclusions" class="slide level2">
 <h2>Conclusions</h2>
 <p>As an exploratory approach we opted for an ad-hoc heuristic based on iteratively apply standard STM to detect topic-relevant term-pairs and merge them into a single extended-word.<br />
 The coherence and the intelligibility of the obtained topics were significantly enhanced. Through a fine-grained and cross-market analysis of the thematic organization of the corpus we were able to gain relevant information about drug trade on ToR that goes well beyond those provided by the already available high level content classification.</p>
